@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.asus.sampleblki.BuatBiodata;
-import com.example.asus.sampleblki.MainActivity;
+import com.example.asus.sampleblki.FormPelatihan;
+import com.example.asus.sampleblki.FormPencariKerja;
 import com.example.asus.sampleblki.R;
 
 /**
@@ -41,7 +41,7 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(), BuatBiodata.class);
-        getActivity().startActivity(intent);
+        Intent intent = new Intent(getActivity(), FormPelatihan.class);
+        startActivityForResult(intent, 1);
     }
 }
