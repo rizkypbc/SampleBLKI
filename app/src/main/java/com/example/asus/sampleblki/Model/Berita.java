@@ -1,30 +1,15 @@
 package com.example.asus.sampleblki.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by ASUS on 09/05/2017.
  */
 
-public class Berita {
+public class Berita implements Serializable {
 
-    private int mImage;
-    private String mNama;
-    private String mTanggal;
+    public String image_url;
+    public String name;
+    public double price;
 
-    public Berita(int mImage, String mNama, String mTanggal){
-        this.mImage = mImage;
-        this.mNama = mNama;
-        this.mTanggal = mTanggal;
     }
-
-    public int getmImage(){
-        return mImage;
-    }
-
-    public String getmNama(){
-        return mNama;
-    }
-
-    public String getmTanggal(){
-        return mTanggal;
-    }
-}

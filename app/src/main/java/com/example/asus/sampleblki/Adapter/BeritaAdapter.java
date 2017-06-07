@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.asus.sampleblki.Model.Berita;
 import com.example.asus.sampleblki.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -37,20 +38,32 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.HolderItem
 
     @Override
     public void onBindViewHolder(HolderItem holder, int position){
-        Berita currentBerita = mBerita.get(position);
 
-        holder.mImage.setImageResource(currentBerita.getmImage());
-        holder.mNama.setText(currentBerita.getmNama());
-        holder.mTanggal.setText(currentBerita.getmTanggal());
+        final Berita currentBerita = mBerita.get(position);
+
+        holder.mNama.setText(currentBerita.name);
+        holder.mTanggal.setText("$" + currentBerita.price);
+
+        String fullUrl = "http://10.223.225.246/customer/" + currentBerita.image_url;
+
+        Picasso.with(mContext)
+                .load(fullUrl)
+                .placeholder(R.drawable.news)
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.mImage);
 
     }
 
     @Override
     public int getItemCount(){
-        return mBerita.size();
+        if (mBerita != null) {
+            return mBerita.size();
+        }
+
+        return 0;
     }
 
-    public class HolderItem extends RecyclerView.ViewHolder{
+    public static class HolderItem extends RecyclerView.ViewHolder {
         public CardView cvItem;
         public ImageView mImage;
         public TextView mNama;

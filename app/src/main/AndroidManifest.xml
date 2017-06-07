@@ -21,16 +21,19 @@
 
         <activity
             android:name=".FormPelatihan"
-            android:label="@string/pelatihan">
+            android:label="@string/pelatihan"
+            android:parentActivityName=".MainActivity">
         </activity>
 
         <activity
             android:name=".FormPencariKerja"
-            android:label="Form Pencari Kerja"></activity>
+            android:label="Form Pencari Kerja"
+            android:parentActivityName=".MainActivity"></activity>
 
         <activity
             android:name=".FormPerusahaan"
-            android:label="Form Registrasi Perusahaan"></activity>
+            android:label="Form Registrasi Perusahaan"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
