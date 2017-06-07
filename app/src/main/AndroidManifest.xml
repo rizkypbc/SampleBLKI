@@ -34,6 +34,15 @@
             android:name=".FormPerusahaan"
             android:label="Form Registrasi Perusahaan"
             android:parentActivityName=".MainActivity"></activity>
+
+        <activity
+            android:name=".BeritaDetail"
+            android:label="Detail Berita"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.asus.sampleblki.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.asus.sampleblki.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.asus.sampleblki.BeritaDetail;
 import com.example.asus.sampleblki.Model.Berita;
 import com.example.asus.sampleblki.R;
 import com.squareup.picasso.Picasso;
@@ -51,6 +53,16 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.HolderItem
                 .placeholder(R.drawable.news)
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.mImage);
+
+        holder.mImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(mContext, BeritaDetail.class);
+                in.putExtra("berita", currentBerita);
+                in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(in);
+            }
+        });
 
     }
 
