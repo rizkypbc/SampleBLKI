@@ -43,10 +43,10 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.HolderItem
 
         final Berita currentBerita = mBerita.get(position);
 
-        holder.mNama.setText(currentBerita.name);
-        holder.mTanggal.setText("$" + currentBerita.price);
+        holder.mNama.setText(currentBerita.judulberita);
+        holder.mTanggal.setText(currentBerita.tglkirim);
 
-        String fullUrl = "http://10.223.225.246/customer/" + currentBerita.image_url;
+        String fullUrl = "http://192.168.43.212/kios/" + currentBerita.photoberita;
 
         Picasso.with(mContext)
                 .load(fullUrl)
@@ -54,7 +54,7 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.HolderItem
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.mImage);
 
-        holder.mImage.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(mContext, BeritaDetail.class);

@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">App BLKI</string>
     <string name="pelatihan">Form Pelatihan</string>
+
+    <!--<string name="country_prompt">Choose a country</string>-->
+    <string name="country_name">Choose a country</string>
+    <string-array name="countries">
+        <item>India</item>
+        <item>London</item>
+        <item>USA</item>
+        <item>Burma</item>
+        <item>China</item>
+        <item>Malaysia</item>
+        <item>singapore</item>
+        <item>Italy</item>
+        <item>Russia</item>
+    </string-array>
 </resources>

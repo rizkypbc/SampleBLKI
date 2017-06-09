@@ -8,8 +8,13 @@ import java.io.Serializable;
 
 public class Berita implements Serializable {
 
-    public String image_url;
-    public String name;
-    public double price;
+//    public String image_url;
+//    public String name;
+//    public double price;
+
+    public String photoberita;
+    public String tglkirim;
+    public String judulberita;
+    public String deskripsi;
 
     }

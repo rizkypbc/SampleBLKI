@@ -8,21 +8,26 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.asus.sampleblki.Api.AccessServiceAPI;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Created by ASUS on 09/05/2017.
  */
 
-public class FormPelatihan extends AppCompatActivity {
+public class FormPelatihan extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText txtNama;
     private EditText txtJK;
@@ -42,6 +47,7 @@ public class FormPelatihan extends AppCompatActivity {
     private EditText txtUrlPhoto;
     private ProgressDialog m_ProgressDialog;
     private AccessServiceAPI m_AccessServiceAPI;
+    private Spinner spinner1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +68,25 @@ public class FormPelatihan extends AppCompatActivity {
         txtAsal = (EditText) findViewById(R.id.txt_asal_sekolah);
         txtKejuruan = (EditText) findViewById(R.id.txt_kejuruan);
         txtSubKejuruan = (EditText) findViewById(R.id.txt_sub_kejuruan);
-        txtProgram = (EditText) findViewById(R.id.txt_program);
+        spinner1 = (Spinner) findViewById(R.id.spinner1);
+//        txtProgram = (EditText) findViewById(R.id.txt_program);
         txtUrlPhoto = (EditText) findViewById(R.id.txt_url_photo);
         m_AccessServiceAPI = new AccessServiceAPI();
+
+        spinner1.setOnItemSelectedListener(this);
+
+//        ArrayList categories = new ArrayList();
+//        categories.add("Automobile");
+//        categories.add("Business Services");
+//        categories.add("Computers");
+//        categories.add("Education");
+//        categories.add("Personal");
+//        categories.add("Travel");
+
+//        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, categories);
+        ArrayAdapter dataAdapter = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(dataAdapter);
     }
 
     public void btnRegister_Click(View v) {
@@ -78,9 +100,20 @@ public class FormPelatihan extends AppCompatActivity {
                 txtProvinsi.getText().toString(), txtKab.getText().toString(), txtNoTelp.getText().toString(),
                 txtEmail.getText().toString(), txtAgama.getText().toString(), txtPendidikan.getText().toString(),
                 txtJurusan.getText().toString(), txtAsal.getText().toString(), txtKejuruan.getText().toString(),
-                txtSubKejuruan.getText().toString(), txtProgram.getText().toString(), txtUrlPhoto.getText().toString());
+                txtSubKejuruan.getText().toString(), spinner1.getSelectedItem().toString(), txtUrlPhoto.getText().toString());
 
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
 
     public class TaskRegister extends AsyncTask<String, Void, Integer> {
 
@@ -145,7 +178,8 @@ public class FormPelatihan extends AppCompatActivity {
                 i.putExtra("asal_sekolah", txtAsal.getText().toString());
                 i.putExtra("kejuruan", txtKejuruan.getText().toString());
                 i.putExtra("sub_kejuruan", txtSubKejuruan.getText().toString());
-                i.putExtra("program", txtProgram.getText().toString());
+//                i.putExtra("program", txtProgram.getText().toString());
+                i.putExtra("program", spinner1.getSelectedItem().toString());
                 i.putExtra("urlphoto", txtUrlPhoto.getText().toString());
                 setResult(1, i);
                 finish();
