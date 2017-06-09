@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -48,6 +50,9 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
     private ProgressDialog m_ProgressDialog;
     private AccessServiceAPI m_AccessServiceAPI;
     private Spinner spinner1;
+    private RadioGroup radioSexGroup;
+    ;
+    private RadioButton radioSexButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +60,7 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.activity_form_pelatihan);
 //        txtId = (EditText)findViewById(R.id.txt_id);
         txtNama = (EditText) findViewById(R.id.txt_nama);
-        txtJK = (EditText) findViewById(R.id.txt_jk);
+//        txtJK = (EditText) findViewById(R.id.txt_jk);
         txtTTL = (EditText) findViewById(R.id.txt_ttl);
         txtAlamat = (EditText) findViewById(R.id.txt_alamat);
         txtProvinsi = (EditText) findViewById(R.id.txt_provinsi);
@@ -72,6 +77,8 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
 //        txtProgram = (EditText) findViewById(R.id.txt_program);
         txtUrlPhoto = (EditText) findViewById(R.id.txt_url_photo);
         m_AccessServiceAPI = new AccessServiceAPI();
+
+        radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
 
         spinner1.setOnItemSelectedListener(this);
 
@@ -94,9 +101,15 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
         if ("".equals(txtNama.getText().toString())) {
             txtNama.setError("Nama Tidak Boleh Kosong");
             return;
+
         }
+
+        int selectedId = radioSexGroup.getCheckedRadioButtonId();
+
+        radioSexButton = (RadioButton) findViewById(selectedId);
+
         new TaskRegister().execute(txtNama.getText().toString(),
-                txtJK.getText().toString(), txtTTL.getText().toString(), txtAlamat.getText().toString(),
+                radioSexButton.getText().toString(), txtTTL.getText().toString(), txtAlamat.getText().toString(),
                 txtProvinsi.getText().toString(), txtKab.getText().toString(), txtNoTelp.getText().toString(),
                 txtEmail.getText().toString(), txtAgama.getText().toString(), txtPendidikan.getText().toString(),
                 txtJurusan.getText().toString(), txtAsal.getText().toString(), txtKejuruan.getText().toString(),
@@ -165,7 +178,8 @@ public class FormPelatihan extends AppCompatActivity implements AdapterView.OnIt
                 Intent i = new Intent();
 //                i.putExtra("id", txtId.getText().toString());
                 i.putExtra("nama", txtNama.getText().toString());
-                i.putExtra("jjk", txtJK.getText().toString());
+//                i.putExtra("jjk", txtJK.getText().toString());
+                i.putExtra("jjk", radioSexButton.getText().toString());
                 i.putExtra("ttl", txtTTL.getText().toString());
                 i.putExtra("alamat", txtAlamat.getText().toString());
                 i.putExtra("provinsi", txtProvinsi.getText().toString());
