@@ -32,16 +32,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
-            android:text="Nama Lengkap"
+            android:text="Username"
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/txt_nama"
+            android:id="@+id/txt_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Isi Nama Lengkap Anda"
+            android:hint="Isi Username Anda"
             android:textSize="14sp">
 
             <requestFocus />
@@ -51,16 +51,85 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Jenis Kelamin"
+            android:paddingBottom="5dp"
+            android:text="Password"
             android:textSize="12sp" />
 
+        <EditText
+            android:id="@+id/txt_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Password Anda"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Confirmasi Password"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_konfirmasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Konfirmasi Password Anda"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="No KTP"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_noktp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi No KTP Anda"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Nama"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_nama_pencari_kerja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Isi Nama Anda"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Jenis Kelamin" />
+
         <RadioGroup
-            android:id="@+id/radioSex"
+            android:id="@+id/radioJenisKelamin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioMale"
+                android:id="@+id/radioLaki"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorPrimary"
@@ -69,7 +138,7 @@
                 android:textSize="13sp" />
 
             <RadioButton
-                android:id="@+id/radioFemale"
+                android:id="@+id/radioPerempuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/colorPrimary"
@@ -78,9 +147,9 @@
 
         </RadioGroup>
         <!--<EditText-->
-        <!--android:id="@+id/txt_jk"-->
+        <!--android:id="@+id/txt_jk_pencari_kerja"-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+        <!--android:layout_height="wrap_content"/>-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,29 +160,12 @@
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/txt_ttl"
+            android:id="@+id/txt_ttl_pencari_kerja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
             android:hint="Isi Tempat Tanggal Lahir Anda"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Alamat"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/txt_alamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
-            android:ems="5"
-            android:hint="Isi Alamat Anda"
             android:textSize="14sp" />
 
         <TextView
@@ -133,11 +185,6 @@
             android:backgroundTint="@color/colorPrimary"
             android:prompt="@string/nama_provinsi" />
 
-        <!--<EditText-->
-        <!--android:id="@+id/txt_provinsi"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -153,108 +200,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
             android:prompt="@string/nama_kabupaten" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_kab_kota"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="No Telp"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/txt_notelp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
-            android:ems="5"
-            android:hint="Isi Nomor Telp Anda"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Email"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/txt_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edit_text"
-            android:ems="5"
-            android:hint="Isi Email Anda Jika Ada"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Agama"
-            android:textSize="12sp" />
-
-        <Spinner
-            android:id="@+id/spnAgama"
-            style="@android:style/Widget.Holo.Light.Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_agama" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_agama"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Pendidikan"
-            android:textSize="12sp" />
-
-        <Spinner
-            android:id="@+id/spnPendidikan"
-            style="@android:style/Widget.Holo.Light.Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_pendidikan" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_pendidikan"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingBottom="5dp"
-            android:text="Jurusan"
-            android:textSize="12sp" />
-
-        <Spinner
-            android:id="@+id/spnJurusan"
-            style="@android:style/Widget.Holo.Light.Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_jurusan" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_jurusan"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -278,63 +223,89 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:paddingBottom="5dp"
-            android:text="Kejuruan"
+            android:text="Pendidikan (Non Formal)"
             android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnKejuruan"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <EditText
+            android:id="@+id/txt_pendidikan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_kejuruan" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_kejuruan"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+            android:layout_height="100dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Pendidikan Anda"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:paddingBottom="5dp"
-            android:text="Sub Kejuruan"
+            android:text="Ketrampilan"
             android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnSubKejuruan"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <EditText
+            android:id="@+id/txt_ketrampilan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/nama_sub_kejuruan" />
-
-        <!--<EditText-->
-        <!--android:id="@+id/txt_sub_kejuruan"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+            android:layout_height="100dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Ketrampilan Anda"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:paddingBottom="5dp"
-            android:text="Program"
+            android:text="Pengalaman Kerja"
             android:textSize="12sp" />
 
-        <Spinner
-            android:id="@+id/spnProgram"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <EditText
+            android:id="@+id/txt_pengalaman"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary"
-            android:prompt="@string/country_name" />
+            android:layout_height="100dp"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:gravity="top"
+            android:hint="Isi Pengalaman Kerja Anda"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
 
-        <!--<EditText-->
-        <!--android:id="@+id/txt_program"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Alumni BLKI"
+            android:textSize="12sp" />
+
+        <RadioGroup
+            android:id="@+id/radioAlumni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioYa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:checked="true"
+                android:text="Ya"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/radioTidak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="Tidak"
+                android:textSize="13sp" />
+
+        </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -345,20 +316,38 @@
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/txt_url_photo"
+            android:id="@+id/txt_photo_bursa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_edit_text"
             android:ems="5"
-            android:hint="Upload Photo"
+            android:hint="Browse Photo"
             android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:text="Riwayat Hidup (CV)"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/txt_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:hint="Riwayat Hidup"
+            android:textSize="14sp" />
+
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/colorPrimary"
-            android:onClick="btnRegister_Click"
+            android:onClick="btnPencariKerja_Click"
             android:text="Kirim"
             android:textAllCaps="true" />
 
